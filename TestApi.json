@@ -1,0 +1,39 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "TestApi",
+    "description": "",
+    "version": "1"
+  },
+  "paths": {
+    "/test": {
+      "get": {
+        "summary": "",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "success response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "msg": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": [
+                  {
+                    "msg": "success"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
