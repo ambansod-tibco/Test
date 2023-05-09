@@ -1,0 +1,43 @@
+swagger: "2.0"
+info:
+  title: "xyz"
+  description: "desc"
+  version: "xyz"
+tags: []
+paths:
+  /Test:
+    get:
+      summary: ""
+      description: ""
+      parameters: []
+      responses:
+        200:
+          description: "success response"
+          schema:
+            type: "object"
+          examples:
+            application/json:
+              .:.: "."
+          headers: {}
+      produces:
+        - "application/json"
+    put:
+      summary: ""
+      description: ""
+      parameters: []
+      responses:
+        200:
+          description: "success response"
+          schema:
+            type: "object"
+            properties:
+              msg:
+                type: "string"
+          examples:
+            application/json:
+              msg: "success"
+      produces:
+        - "application/json"
+      consumes:
+        - "application/json"
+definitions: {}
