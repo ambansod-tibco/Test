@@ -14,7 +14,7 @@
   ],
   "basePath": "/v1.43",
   "info": {
-    "title": "Docker Engine API",
+    "title": "Docker Engine API test",
     "version": "1.43",
     "x-logo": {
       "url": "https://docs.docker.com/assets/images/logo-docker-main.png"
@@ -830,7 +830,7 @@
             },
             "NetworkMode": {
               "type": "string",
-              "description": "Network mode to use for this container. Supported standard values\nare: `bridge`, `host`, `none`, and `container:<name|id>`. Any\nother value is taken as a custom network's name to which this\ncontainer should connect to.\n"
+              "description": "Network mode to use for this container. Supported standard values\nare: `bridge`, `host`, `none`, and `container:&lt;name|id&gt;`. Any\nother value is taken as a custom network's name to which this\ncontainer should connect to.\n"
             },
             "PortBindings": {
               "$ref": "#/definitions/PortMap"
@@ -848,7 +848,7 @@
             },
             "VolumesFrom": {
               "type": "array",
-              "description": "A list of volumes to inherit from another container, specified in\nthe form `<container name>[:<ro|rw>]`.\n",
+              "description": "A list of volumes to inherit from another container, specified in\nthe form `&lt;container name&gt;[:&lt;ro|rw&gt;]`.\n",
               "items": {
                 "type": "string"
               }
@@ -930,7 +930,7 @@
             },
             "IpcMode": {
               "type": "string",
-              "description": "IPC sharing mode for the container. Possible values are:\n\n- `\"none\"`: own private IPC namespace, with /dev/shm not mounted\n- `\"private\"`: own private IPC namespace\n- `\"shareable\"`: own private IPC namespace, with a possibility to share it with other containers\n- `\"container:<name|id>\"`: join another (shareable) container's IPC namespace\n- `\"host\"`: use the host system's IPC namespace\n\nIf not specified, daemon default is used, which can either be `\"private\"`\nor `\"shareable\"`, depending on daemon version and configuration.\n"
+              "description": "IPC sharing mode for the container. Possible values are:\n\n- `\"none\"`: own private IPC namespace, with /dev/shm not mounted\n- `\"private\"`: own private IPC namespace\n- `\"shareable\"`: own private IPC namespace, with a possibility to share it with other containers\n- `\"container:&lt;name|id&gt;\"`: join another (shareable) container's IPC namespace\n- `\"host\"`: use the host system's IPC namespace\n\nIf not specified, daemon default is used, which can either be `\"private\"`\nor `\"shareable\"`, depending on daemon version and configuration.\n"
             },
             "Cgroup": {
               "type": "string",
@@ -950,7 +950,7 @@
             },
             "PidMode": {
               "type": "string",
-              "description": "Set the PID (Process) Namespace mode for the container. It can be\neither:\n\n- `\"container:<name|id>\"`: joins another container's PID namespace\n- `\"host\"`: use the host's PID namespace inside the container\n"
+              "description": "Set the PID (Process) Namespace mode for the container. It can be\neither:\n\n- `\"container:&lt;name|id&gt;\"`: joins another container's PID namespace\n- `\"host\"`: use the host's PID namespace inside the container\n"
             },
             "Privileged": {
               "type": "boolean",
@@ -1069,7 +1069,7 @@
           "default": true
         },
         "ExposedPorts": {
-          "description": "An object mapping ports to an empty object in the form:\n\n`{\"<port>/<tcp|udp|sctp>\": {}}`\n",
+          "description": "An object mapping ports to an empty object in the form:\n\n`{\"&lt;port&gt;/&lt;tcp|udp|sctp&gt;\": {}}`\n",
           "type": "object",
           "x-nullable": true,
           "additionalProperties": {
@@ -1303,42 +1303,42 @@
           "x-nullable": true
         },
         "EndpointID": {
-          "description": "EndpointID uniquely represents a service endpoint in a Sandbox.\n\n<p><br /></p>\n\n> **Deprecated**: This field is only propagated when attached to the\n> default \"bridge\" network. Use the information from the \"bridge\"\n> network inside the `Networks` map instead, which contains the same\n> information. This field was deprecated in Docker 1.9 and is scheduled\n> to be removed in Docker 17.12.0\n",
+          "description": "EndpointID uniquely represents a service endpoint in a Sandbox.\n\n<p><br /></p>\n\n&gt; **Deprecated**: This field is only propagated when attached to the\n&gt; default \"bridge\" network. Use the information from the \"bridge\"\n&gt; network inside the `Networks` map instead, which contains the same\n&gt; information. This field was deprecated in Docker 1.9 and is scheduled\n&gt; to be removed in Docker 17.12.0\n",
           "type": "string",
           "example": "b88f5b905aabf2893f3cbc4ee42d1ea7980bbc0a92e2c8922b1e1795298afb0b"
         },
         "Gateway": {
-          "description": "Gateway address for the default \"bridge\" network.\n\n<p><br /></p>\n\n> **Deprecated**: This field is only propagated when attached to the\n> default \"bridge\" network. Use the information from the \"bridge\"\n> network inside the `Networks` map instead, which contains the same\n> information. This field was deprecated in Docker 1.9 and is scheduled\n> to be removed in Docker 17.12.0\n",
+          "description": "Gateway address for the default \"bridge\" network.\n\n<p><br /></p>\n\n&gt; **Deprecated**: This field is only propagated when attached to the\n&gt; default \"bridge\" network. Use the information from the \"bridge\"\n&gt; network inside the `Networks` map instead, which contains the same\n&gt; information. This field was deprecated in Docker 1.9 and is scheduled\n&gt; to be removed in Docker 17.12.0\n",
           "type": "string",
           "example": "172.17.0.1"
         },
         "GlobalIPv6Address": {
-          "description": "Global IPv6 address for the default \"bridge\" network.\n\n<p><br /></p>\n\n> **Deprecated**: This field is only propagated when attached to the\n> default \"bridge\" network. Use the information from the \"bridge\"\n> network inside the `Networks` map instead, which contains the same\n> information. This field was deprecated in Docker 1.9 and is scheduled\n> to be removed in Docker 17.12.0\n",
+          "description": "Global IPv6 address for the default \"bridge\" network.\n\n<p><br /></p>\n\n&gt; **Deprecated**: This field is only propagated when attached to the\n&gt; default \"bridge\" network. Use the information from the \"bridge\"\n&gt; network inside the `Networks` map instead, which contains the same\n&gt; information. This field was deprecated in Docker 1.9 and is scheduled\n&gt; to be removed in Docker 17.12.0\n",
           "type": "string",
           "example": "2001:db8::5689"
         },
         "GlobalIPv6PrefixLen": {
-          "description": "Mask length of the global IPv6 address.\n\n<p><br /></p>\n\n> **Deprecated**: This field is only propagated when attached to the\n> default \"bridge\" network. Use the information from the \"bridge\"\n> network inside the `Networks` map instead, which contains the same\n> information. This field was deprecated in Docker 1.9 and is scheduled\n> to be removed in Docker 17.12.0\n",
+          "description": "Mask length of the global IPv6 address.\n\n<p><br /></p>\n\n&gt; **Deprecated**: This field is only propagated when attached to the\n&gt; default \"bridge\" network. Use the information from the \"bridge\"\n&gt; network inside the `Networks` map instead, which contains the same\n&gt; information. This field was deprecated in Docker 1.9 and is scheduled\n&gt; to be removed in Docker 17.12.0\n",
           "type": "integer",
           "example": 64
         },
         "IPAddress": {
-          "description": "IPv4 address for the default \"bridge\" network.\n\n<p><br /></p>\n\n> **Deprecated**: This field is only propagated when attached to the\n> default \"bridge\" network. Use the information from the \"bridge\"\n> network inside the `Networks` map instead, which contains the same\n> information. This field was deprecated in Docker 1.9 and is scheduled\n> to be removed in Docker 17.12.0\n",
+          "description": "IPv4 address for the default \"bridge\" network.\n\n<p><br /></p>\n\n&gt; **Deprecated**: This field is only propagated when attached to the\n&gt; default \"bridge\" network. Use the information from the \"bridge\"\n&gt; network inside the `Networks` map instead, which contains the same\n&gt; information. This field was deprecated in Docker 1.9 and is scheduled\n&gt; to be removed in Docker 17.12.0\n",
           "type": "string",
           "example": "172.17.0.4"
         },
         "IPPrefixLen": {
-          "description": "Mask length of the IPv4 address.\n\n<p><br /></p>\n\n> **Deprecated**: This field is only propagated when attached to the\n> default \"bridge\" network. Use the information from the \"bridge\"\n> network inside the `Networks` map instead, which contains the same\n> information. This field was deprecated in Docker 1.9 and is scheduled\n> to be removed in Docker 17.12.0\n",
+          "description": "Mask length of the IPv4 address.\n\n<p><br /></p>\n\n&gt; **Deprecated**: This field is only propagated when attached to the\n&gt; default \"bridge\" network. Use the information from the \"bridge\"\n&gt; network inside the `Networks` map instead, which contains the same\n&gt; information. This field was deprecated in Docker 1.9 and is scheduled\n&gt; to be removed in Docker 17.12.0\n",
           "type": "integer",
           "example": 16
         },
         "IPv6Gateway": {
-          "description": "IPv6 gateway address for this network.\n\n<p><br /></p>\n\n> **Deprecated**: This field is only propagated when attached to the\n> default \"bridge\" network. Use the information from the \"bridge\"\n> network inside the `Networks` map instead, which contains the same\n> information. This field was deprecated in Docker 1.9 and is scheduled\n> to be removed in Docker 17.12.0\n",
+          "description": "IPv6 gateway address for this network.\n\n<p><br /></p>\n\n&gt; **Deprecated**: This field is only propagated when attached to the\n&gt; default \"bridge\" network. Use the information from the \"bridge\"\n&gt; network inside the `Networks` map instead, which contains the same\n&gt; information. This field was deprecated in Docker 1.9 and is scheduled\n&gt; to be removed in Docker 17.12.0\n",
           "type": "string",
           "example": "2001:db8:2::100"
         },
         "MacAddress": {
-          "description": "MAC address for the container on the default \"bridge\" network.\n\n<p><br /></p>\n\n> **Deprecated**: This field is only propagated when attached to the\n> default \"bridge\" network. Use the information from the \"bridge\"\n> network inside the `Networks` map instead, which contains the same\n> information. This field was deprecated in Docker 1.9 and is scheduled\n> to be removed in Docker 17.12.0\n",
+          "description": "MAC address for the container on the default \"bridge\" network.\n\n<p><br /></p>\n\n&gt; **Deprecated**: This field is only propagated when attached to the\n&gt; default \"bridge\" network. Use the information from the \"bridge\"\n&gt; network inside the `Networks` map instead, which contains the same\n&gt; information. This field was deprecated in Docker 1.9 and is scheduled\n&gt; to be removed in Docker 17.12.0\n",
           "type": "string",
           "example": "02:42:ac:11:00:04"
         },
@@ -1366,7 +1366,7 @@
       }
     },
     "PortMap": {
-      "description": "PortMap describes the mapping of container ports to host ports, using the\ncontainer's port-number and protocol as key in the format `<port>/<protocol>`,\nfor example, `80/udp`.\n\nIf a container's port is mapped for multiple protocols, separate entries\nare added to the mapping table.\n",
+      "description": "PortMap describes the mapping of container ports to host ports, using the\ncontainer's port-number and protocol as key in the format `&lt;port&gt;/&lt;protocol&gt;`,\nfor example, `80/udp`.\n\nIf a container's port is mapped for multiple protocols, separate entries\nare added to the mapping table.\n",
       "type": "object",
       "additionalProperties": {
         "type": "array",
@@ -2041,7 +2041,7 @@
           "default": "default"
         },
         "Config": {
-          "description": "List of IPAM configuration options, specified as a map:\n\n```\n{\"Subnet\": <CIDR>, \"IPRange\": <CIDR>, \"Gateway\": <IP address>, \"AuxAddress\": <device_name:IP address>}\n```\n",
+          "description": "List of IPAM configuration options, specified as a map:\n\n```\n{\"Subnet\": &lt;CIDR&gt;, \"IPRange\": &lt;CIDR&gt;, \"Gateway\": &lt;IP address&gt;, \"AuxAddress\": &lt;device_name:IP address&gt;}\n```\n",
           "type": "array",
           "items": {
             "$ref": "#/definitions/IPAMConfig"
@@ -2135,7 +2135,7 @@
           "example": "ndlpt0hhvkqcdfkputsk4cq9c"
         },
         "Parent": {
-          "description": "ID of the parent build cache record.\n\n> **Deprecated**: This field is deprecated, and omitted if empty.\n",
+          "description": "ID of the parent build cache record.\n\n&gt; **Deprecated**: This field is deprecated, and omitted if empty.\n",
           "type": "string",
           "x-nullable": true,
           "example": ""
@@ -2167,7 +2167,7 @@
         "Description": {
           "type": "string",
           "description": "Description of the build-step that produced the build cache.\n",
-          "example": "mount / from exec /bin/sh -c echo 'Binary::apt::APT::Keep-Downloaded-Packages \"true\";' > /etc/apt/apt.conf.d/keep-cache"
+          "example": "mount / from exec /bin/sh -c echo 'Binary::apt::APT::Keep-Downloaded-Packages \"true\";' &gt; /etc/apt/apt.conf.d/keep-cache"
         },
         "InUse": {
           "type": "boolean",
@@ -3489,7 +3489,7 @@
       "properties": {
         "PluginSpec": {
           "type": "object",
-          "description": "Plugin spec for the service.  *(Experimental release only.)*\n\n<p><br /></p>\n\n> **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are\n> mutually exclusive. PluginSpec is only used when the Runtime field\n> is set to `plugin`. NetworkAttachmentSpec is used when the Runtime\n> field is set to `attachment`.\n",
+          "description": "Plugin spec for the service.  *(Experimental release only.)*\n\n<p><br /></p>\n\n&gt; **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are\n&gt; mutually exclusive. PluginSpec is only used when the Runtime field\n&gt; is set to `plugin`. NetworkAttachmentSpec is used when the Runtime\n&gt; field is set to `attachment`.\n",
           "properties": {
             "Name": {
               "description": "The name or 'alias' to use for the plugin.",
@@ -3513,7 +3513,7 @@
         },
         "ContainerSpec": {
           "type": "object",
-          "description": "Container spec for the service.\n\n<p><br /></p>\n\n> **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are\n> mutually exclusive. PluginSpec is only used when the Runtime field\n> is set to `plugin`. NetworkAttachmentSpec is used when the Runtime\n> field is set to `attachment`.\n",
+          "description": "Container spec for the service.\n\n<p><br /></p>\n\n&gt; **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are\n&gt; mutually exclusive. PluginSpec is only used when the Runtime field\n&gt; is set to `plugin`. NetworkAttachmentSpec is used when the Runtime\n&gt; field is set to `attachment`.\n",
           "properties": {
             "Image": {
               "description": "The image name to use for the container",
@@ -3577,16 +3577,16 @@
                     "Config": {
                       "type": "string",
                       "example": "0bt9dmxjvjiqermk6xrop3ekq",
-                      "description": "Load credential spec from a Swarm Config with the given ID.\nThe specified config must also be present in the Configs\nfield with the Runtime property set.\n\n<p><br /></p>\n\n\n> **Note**: `CredentialSpec.File`, `CredentialSpec.Registry`,\n> and `CredentialSpec.Config` are mutually exclusive.\n"
+                      "description": "Load credential spec from a Swarm Config with the given ID.\nThe specified config must also be present in the Configs\nfield with the Runtime property set.\n\n<p><br /></p>\n\n\n&gt; **Note**: `CredentialSpec.File`, `CredentialSpec.Registry`,\n&gt; and `CredentialSpec.Config` are mutually exclusive.\n"
                     },
                     "File": {
                       "type": "string",
                       "example": "spec.json",
-                      "description": "Load credential spec from this file. The file is read by\nthe daemon, and must be present in the `CredentialSpecs`\nsubdirectory in the docker data directory, which defaults\nto `C:\\ProgramData\\Docker\\` on Windows.\n\nFor example, specifying `spec.json` loads\n`C:\\ProgramData\\Docker\\CredentialSpecs\\spec.json`.\n\n<p><br /></p>\n\n> **Note**: `CredentialSpec.File`, `CredentialSpec.Registry`,\n> and `CredentialSpec.Config` are mutually exclusive.\n"
+                      "description": "Load credential spec from this file. The file is read by\nthe daemon, and must be present in the `CredentialSpecs`\nsubdirectory in the docker data directory, which defaults\nto `C:\\ProgramData\\Docker\\` on Windows.\n\nFor example, specifying `spec.json` loads\n`C:\\ProgramData\\Docker\\CredentialSpecs\\spec.json`.\n\n<p><br /></p>\n\n&gt; **Note**: `CredentialSpec.File`, `CredentialSpec.Registry`,\n&gt; and `CredentialSpec.Config` are mutually exclusive.\n"
                     },
                     "Registry": {
                       "type": "string",
-                      "description": "Load credential spec from this value in the Windows\nregistry. The specified registry value must be located in:\n\n`HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Virtualization\\Containers\\CredentialSpecs`\n\n<p><br /></p>\n\n\n> **Note**: `CredentialSpec.File`, `CredentialSpec.Registry`,\n> and `CredentialSpec.Config` are mutually exclusive.\n"
+                      "description": "Load credential spec from this value in the Windows\nregistry. The specified registry value must be located in:\n\n`HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Virtualization\\Containers\\CredentialSpecs`\n\n<p><br /></p>\n\n\n&gt; **Note**: `CredentialSpec.File`, `CredentialSpec.Registry`,\n&gt; and `CredentialSpec.Config` are mutually exclusive.\n"
                     }
                   }
                 },
@@ -3730,7 +3730,7 @@
                 "type": "object",
                 "properties": {
                   "File": {
-                    "description": "File represents a specific target that is backed by a file.\n\n<p><br /><p>\n\n> **Note**: `Configs.File` and `Configs.Runtime` are mutually exclusive\n",
+                    "description": "File represents a specific target that is backed by a file.\n\n<p><br /><p>\n\n&gt; **Note**: `Configs.File` and `Configs.Runtime` are mutually exclusive\n",
                     "type": "object",
                     "properties": {
                       "Name": {
@@ -3753,7 +3753,7 @@
                     }
                   },
                   "Runtime": {
-                    "description": "Runtime represents a target that is not mounted into the\ncontainer but is used by the task\n\n<p><br /><p>\n\n> **Note**: `Configs.File` and `Configs.Runtime` are mutually\n> exclusive\n",
+                    "description": "Runtime represents a target that is not mounted into the\ncontainer but is used by the task\n\n<p><br /><p>\n\n&gt; **Note**: `Configs.File` and `Configs.Runtime` are mutually\n&gt; exclusive\n",
                     "type": "object"
                   },
                   "ConfigID": {
@@ -3835,7 +3835,7 @@
           }
         },
         "NetworkAttachmentSpec": {
-          "description": "Read-only spec type for non-swarm containers attached to swarm overlay\nnetworks.\n\n<p><br /></p>\n\n> **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are\n> mutually exclusive. PluginSpec is only used when the Runtime field\n> is set to `plugin`. NetworkAttachmentSpec is used when the Runtime\n> field is set to `attachment`.\n",
+          "description": "Read-only spec type for non-swarm containers attached to swarm overlay\nnetworks.\n\n<p><br /></p>\n\n&gt; **Note**: ContainerSpec, NetworkAttachmentSpec, and PluginSpec are\n&gt; mutually exclusive. PluginSpec is only used when the Runtime field\n&gt; is set to `plugin`. NetworkAttachmentSpec is used when the Runtime\n&gt; field is set to `attachment`.\n",
           "type": "object",
           "properties": {
             "ContainerID": {
@@ -5082,7 +5082,7 @@
       "type": "object",
       "properties": {
         "ID": {
-          "description": "Unique identifier of the daemon.\n\n<p><br /></p>\n\n> **Note**: The format of the ID itself is not part of the API, and\n> should not be considered stable.\n",
+          "description": "Unique identifier of the daemon.\n\n<p><br /></p>\n\n&gt; **Note**: The format of the ID itself is not part of the API, and\n&gt; should not be considered stable.\n",
           "type": "string",
           "example": "7TRN:IPZB:QYBB:VPBQ:UMPP:KARE:6ZNR:XE6T:7EWV:PKF4:ZOJD:TPYS"
         },
@@ -5117,7 +5117,7 @@
           "example": "overlay2"
         },
         "DriverStatus": {
-          "description": "Information specific to the storage driver, provided as\n\"label\" / \"value\" pairs.\n\nThis information is provided by the storage driver, and formatted\nin a way consistent with the output of `docker info` on the command\nline.\n\n<p><br /></p>\n\n> **Note**: The information returned in this field, including the\n> formatting of values and labels, should not be considered stable,\n> and may change without notice.\n",
+          "description": "Information specific to the storage driver, provided as\n\"label\" / \"value\" pairs.\n\nThis information is provided by the storage driver, and formatted\nin a way consistent with the output of `docker info` on the command\nline.\n\n<p><br /></p>\n\n&gt; **Note**: The information returned in this field, including the\n&gt; formatting of values and labels, should not be considered stable,\n&gt; and may change without notice.\n",
           "type": "array",
           "items": {
             "type": "array",
@@ -5258,7 +5258,7 @@
           "example": 30
         },
         "KernelVersion": {
-          "description": "Kernel version of the host.\n\nOn Linux, this information obtained from `uname`. On Windows this\ninformation is queried from the <kbd>HKEY_LOCAL_MACHINE\\\\SOFTWARE\\\\Microsoft\\\\Windows NT\\\\CurrentVersion\\\\</kbd>\nregistry value, for example _\"10.0 14393 (14393.1198.amd64fre.rs1_release_sec.170427-1353)\"_.\n",
+          "description": "Kernel version of the host.\n\nOn Linux, this information obtained from `uname`. On Windows this\ninformation is queried from the &lt;kbd&gt;HKEY_LOCAL_MACHINE\\\\SOFTWARE\\\\Microsoft\\\\Windows NT\\\\CurrentVersion\\\\&lt;/kbd&gt;\nregistry value, for example _\"10.0 14393 (14393.1198.amd64fre.rs1_release_sec.170427-1353)\"_.\n",
           "type": "string",
           "example": "4.9.38-moby"
         },
@@ -5268,7 +5268,7 @@
           "example": "Alpine Linux v3.5"
         },
         "OSVersion": {
-          "description": "Version of the host's operating system\n\n<p><br /></p>\n\n> **Note**: The information returned in this field, including its\n> very existence, and the formatting of values, should not be considered\n> stable, and may change without notice.\n",
+          "description": "Version of the host's operating system\n\n<p><br /></p>\n\n&gt; **Note**: The information returned in this field, including its\n&gt; very existence, and the formatting of values, should not be considered\n&gt; stable, and may change without notice.\n",
           "type": "string",
           "example": "16.04"
         },
@@ -5326,7 +5326,7 @@
           "example": "node5.corp.example.com"
         },
         "Labels": {
-          "description": "User-defined labels (key/value metadata) as set on the daemon.\n\n<p><br /></p>\n\n> **Note**: When part of a Swarm, nodes can both have _daemon_ labels,\n> set through the daemon configuration, and _node_ labels, set from a\n> manager node in the Swarm. Node labels are not included in this\n> field. Node labels can be retrieved using the `/nodes/(id)` endpoint\n> on a manager node in the Swarm.\n",
+          "description": "User-defined labels (key/value metadata) as set on the daemon.\n\n<p><br /></p>\n\n&gt; **Note**: When part of a Swarm, nodes can both have _daemon_ labels,\n&gt; set through the daemon configuration, and _node_ labels, set from a\n&gt; manager node in the Swarm. Node labels are not included in this\n&gt; field. Node labels can be retrieved using the `/nodes/(id)` endpoint\n&gt; on a manager node in the Swarm.\n",
           "type": "array",
           "items": {
             "type": "string"
@@ -5342,17 +5342,17 @@
           "example": true
         },
         "ServerVersion": {
-          "description": "Version string of the daemon.\n\n> **Note**: the [standalone Swarm API](https://docs.docker.com/swarm/swarm-api/)\n> returns the Swarm version instead of the daemon  version, for example\n> `swarm/1.2.8`.\n",
+          "description": "Version string of the daemon.\n\n&gt; **Note**: the [standalone Swarm API](https://docs.docker.com/swarm/swarm-api/)\n&gt; returns the Swarm version instead of the daemon  version, for example\n&gt; `swarm/1.2.8`.\n",
           "type": "string",
           "example": "17.06.0-ce"
         },
         "ClusterStore": {
-          "description": "URL of the distributed storage backend.\n\n\nThe storage backend is used for multihost networking (to store\nnetwork and endpoint information) and by the node discovery mechanism.\n\n<p><br /></p>\n\n> **Deprecated**: This field is only propagated when using standalone Swarm\n> mode, and overlay networking using an external k/v store. Overlay\n> networks with Swarm mode enabled use the built-in raft store, and\n> this field will be empty.\n",
+          "description": "URL of the distributed storage backend.\n\n\nThe storage backend is used for multihost networking (to store\nnetwork and endpoint information) and by the node discovery mechanism.\n\n<p><br /></p>\n\n&gt; **Deprecated**: This field is only propagated when using standalone Swarm\n&gt; mode, and overlay networking using an external k/v store. Overlay\n&gt; networks with Swarm mode enabled use the built-in raft store, and\n&gt; this field will be empty.\n",
           "type": "string",
           "example": "consul://consul.corp.example.com:8600/some/path"
         },
         "ClusterAdvertise": {
-          "description": "The network endpoint that the Engine advertises for the purpose of\nnode discovery. ClusterAdvertise is a `host:port` combination on which\nthe daemon is reachable by other hosts.\n\n<p><br /></p>\n\n> **Deprecated**: This field is only propagated when using standalone Swarm\n> mode, and overlay networking using an external k/v store. Overlay\n> networks with Swarm mode enabled use the built-in raft store, and\n> this field will be empty.\n",
+          "description": "The network endpoint that the Engine advertises for the purpose of\nnode discovery. ClusterAdvertise is a `host:port` combination on which\nthe daemon is reachable by other hosts.\n\n<p><br /></p>\n\n&gt; **Deprecated**: This field is only propagated when using standalone Swarm\n&gt; mode, and overlay networking using an external k/v store. Overlay\n&gt; networks with Swarm mode enabled use the built-in raft store, and\n&gt; this field will be empty.\n",
           "type": "string",
           "example": "node5.corp.example.com:8000"
         },
@@ -5475,7 +5475,7 @@
       }
     },
     "PluginsInfo": {
-      "description": "Available plugins per type.\n\n<p><br /></p>\n\n> **Note**: Only unmanaged (V1) plugins are included in this list.\n> V1 plugins are \"lazily\" loaded, and are not returned in this list\n> if there is no resource using the plugin.\n",
+      "description": "Available plugins per type.\n\n<p><br /></p>\n\n&gt; **Note**: Only unmanaged (V1) plugins are included in this list.\n&gt; V1 plugins are \"lazily\" loaded, and are not returned in this list\n&gt; if there is no resource using the plugin.\n",
       "type": "object",
       "properties": {
         "Volume": {
@@ -5540,7 +5540,7 @@
       "x-nullable": true,
       "properties": {
         "AllowNondistributableArtifactsCIDRs": {
-          "description": "List of IP ranges to which nondistributable artifacts can be pushed,\nusing the CIDR syntax [RFC 4632](https://tools.ietf.org/html/4632).\n\nSome images (for example, Windows base images) contain artifacts\nwhose distribution is restricted by license. When these images are\npushed to a registry, restricted artifacts are not included.\n\nThis configuration override this behavior, and enables the daemon to\npush nondistributable artifacts to all registries whose resolved IP\naddress is within the subnet described by the CIDR syntax.\n\nThis option is useful when pushing images containing\nnondistributable artifacts to a registry on an air-gapped network so\nhosts on that network can pull the images without connecting to\nanother server.\n\n> **Warning**: Nondistributable artifacts typically have restrictions\n> on how and where they can be distributed and shared. Only use this\n> feature to push artifacts to private registries and ensure that you\n> are in compliance with any terms that cover redistributing\n> nondistributable artifacts.\n",
+          "description": "List of IP ranges to which nondistributable artifacts can be pushed,\nusing the CIDR syntax [RFC 4632](https://tools.ietf.org/html/4632).\n\nSome images (for example, Windows base images) contain artifacts\nwhose distribution is restricted by license. When these images are\npushed to a registry, restricted artifacts are not included.\n\nThis configuration override this behavior, and enables the daemon to\npush nondistributable artifacts to all registries whose resolved IP\naddress is within the subnet described by the CIDR syntax.\n\nThis option is useful when pushing images containing\nnondistributable artifacts to a registry on an air-gapped network so\nhosts on that network can pull the images without connecting to\nanother server.\n\n&gt; **Warning**: Nondistributable artifacts typically have restrictions\n&gt; on how and where they can be distributed and shared. Only use this\n&gt; feature to push artifacts to private registries and ensure that you\n&gt; are in compliance with any terms that cover redistributing\n&gt; nondistributable artifacts.\n",
           "type": "array",
           "items": {
             "type": "string"
@@ -5551,7 +5551,7 @@
           ]
         },
         "AllowNondistributableArtifactsHostnames": {
-          "description": "List of registry hostnames to which nondistributable artifacts can be\npushed, using the format `<hostname>[:<port>]` or `<IP address>[:<port>]`.\n\nSome images (for example, Windows base images) contain artifacts\nwhose distribution is restricted by license. When these images are\npushed to a registry, restricted artifacts are not included.\n\nThis configuration override this behavior for the specified\nregistries.\n\nThis option is useful when pushing images containing\nnondistributable artifacts to a registry on an air-gapped network so\nhosts on that network can pull the images without connecting to\nanother server.\n\n> **Warning**: Nondistributable artifacts typically have restrictions\n> on how and where they can be distributed and shared. Only use this\n> feature to push artifacts to private registries and ensure that you\n> are in compliance with any terms that cover redistributing\n> nondistributable artifacts.\n",
+          "description": "List of registry hostnames to which nondistributable artifacts can be\npushed, using the format `&lt;hostname&gt;[:&lt;port&gt;]` or `&lt;IP address&gt;[:&lt;port&gt;]`.\n\nSome images (for example, Windows base images) contain artifacts\nwhose distribution is restricted by license. When these images are\npushed to a registry, restricted artifacts are not included.\n\nThis configuration override this behavior for the specified\nregistries.\n\nThis option is useful when pushing images containing\nnondistributable artifacts to a registry on an air-gapped network so\nhosts on that network can pull the images without connecting to\nanother server.\n\n&gt; **Warning**: Nondistributable artifacts typically have restrictions\n&gt; on how and where they can be distributed and shared. Only use this\n&gt; feature to push artifacts to private registries and ensure that you\n&gt; are in compliance with any terms that cover redistributing\n&gt; nondistributable artifacts.\n",
           "type": "array",
           "items": {
             "type": "string"
@@ -5562,7 +5562,7 @@
           ]
         },
         "InsecureRegistryCIDRs": {
-          "description": "List of IP ranges of insecure registries, using the CIDR syntax\n([RFC 4632](https://tools.ietf.org/html/4632)). Insecure registries\naccept un-encrypted (HTTP) and/or untrusted (HTTPS with certificates\nfrom unknown CAs) communication.\n\nBy default, local registries (`127.0.0.0/8`) are configured as\ninsecure. All other registries are secure. Communicating with an\ninsecure registry is not possible if the daemon assumes that registry\nis secure.\n\nThis configuration override this behavior, insecure communication with\nregistries whose resolved IP address is within the subnet described by\nthe CIDR syntax.\n\nRegistries can also be marked insecure by hostname. Those registries\nare listed under `IndexConfigs` and have their `Secure` field set to\n`false`.\n\n> **Warning**: Using this option can be useful when running a local\n> registry, but introduces security vulnerabilities. This option\n> should therefore ONLY be used for testing purposes. For increased\n> security, users should add their CA to their system's list of trusted\n> CAs instead of enabling this option.\n",
+          "description": "List of IP ranges of insecure registries, using the CIDR syntax\n([RFC 4632](https://tools.ietf.org/html/4632)). Insecure registries\naccept un-encrypted (HTTP) and/or untrusted (HTTPS with certificates\nfrom unknown CAs) communication.\n\nBy default, local registries (`127.0.0.0/8`) are configured as\ninsecure. All other registries are secure. Communicating with an\ninsecure registry is not possible if the daemon assumes that registry\nis secure.\n\nThis configuration override this behavior, insecure communication with\nregistries whose resolved IP address is within the subnet described by\nthe CIDR syntax.\n\nRegistries can also be marked insecure by hostname. Those registries\nare listed under `IndexConfigs` and have their `Secure` field set to\n`false`.\n\n&gt; **Warning**: Using this option can be useful when running a local\n&gt; registry, but introduces security vulnerabilities. This option\n&gt; should therefore ONLY be used for testing purposes. For increased\n&gt; security, users should add their CA to their system's list of trusted\n&gt; CAs instead of enabling this option.\n",
           "type": "array",
           "items": {
             "type": "string"
@@ -5642,7 +5642,7 @@
           ]
         },
         "Secure": {
-          "description": "Indicates if the registry is part of the list of insecure\nregistries.\n\nIf `false`, the registry is insecure. Insecure registries accept\nun-encrypted (HTTP) and/or untrusted (HTTPS with certificates from\nunknown CAs) communication.\n\n> **Warning**: Insecure registries can be useful when running a local\n> registry. However, because its use creates security vulnerabilities\n> it should ONLY be enabled for testing purposes. For increased\n> security, users should add their CA to their system's list of\n> trusted CAs instead of enabling this option.\n",
+          "description": "Indicates if the registry is part of the list of insecure\nregistries.\n\nIf `false`, the registry is insecure. Insecure registries accept\nun-encrypted (HTTP) and/or untrusted (HTTPS with certificates from\nunknown CAs) communication.\n\n&gt; **Warning**: Insecure registries can be useful when running a local\n&gt; registry. However, because its use creates security vulnerabilities\n&gt; it should ONLY be enabled for testing purposes. For increased\n&gt; security, users should add their CA to their system's list of\n&gt; trusted CAs instead of enabling this option.\n",
           "type": "boolean",
           "example": true
         },
@@ -6201,7 +6201,7 @@
           {
             "name": "filters",
             "in": "query",
-            "description": "Filters to process on the container list, encoded as JSON (a\n`map[string][]string`). For example, `{\"status\": [\"paused\"]}` will\nonly return paused containers.\n\nAvailable filters:\n\n- `ancestor`=(`<image-name>[:<tag>]`, `<image id>`, or `<image@digest>`)\n- `before`=(`<container id>` or `<container name>`)\n- `expose`=(`<port>[/<proto>]`|`<startport-endport>/[<proto>]`)\n- `exited=<int>` containers with exit code of `<int>`\n- `health`=(`starting`|`healthy`|`unhealthy`|`none`)\n- `id=<ID>` a container's ID\n- `isolation=`(`default`|`process`|`hyperv`) (Windows daemon only)\n- `is-task=`(`true`|`false`)\n- `label=key` or `label=\"key=value\"` of a container label\n- `name=<name>` a container's name\n- `network`=(`<network id>` or `<network name>`)\n- `publish`=(`<port>[/<proto>]`|`<startport-endport>/[<proto>]`)\n- `since`=(`<container id>` or `<container name>`)\n- `status=`(`created`|`restarting`|`running`|`removing`|`paused`|`exited`|`dead`)\n- `volume`=(`<volume name>` or `<mount point destination>`)\n",
+            "description": "Filters to process on the container list, encoded as JSON (a\n`map[string][]string`). For example, `{\"status\": [\"paused\"]}` will\nonly return paused containers.\n\nAvailable filters:\n\n- `ancestor`=(`&lt;image-name&gt;[:&lt;tag&gt;]`, `&lt;image id&gt;`, or `&lt;image@digest&gt;`)\n- `before`=(`&lt;container id&gt;` or `&lt;container name&gt;`)\n- `expose`=(`&lt;port&gt;[/&lt;proto&gt;]`|`&lt;startport-endport&gt;/[&lt;proto&gt;]`)\n- `exited=&lt;int&gt;` containers with exit code of `&lt;int&gt;`\n- `health`=(`starting`|`healthy`|`unhealthy`|`none`)\n- `id=&lt;ID&gt;` a container's ID\n- `isolation=`(`default`|`process`|`hyperv`) (Windows daemon only)\n- `is-task=`(`true`|`false`)\n- `label=key` or `label=\"key=value\"` of a container label\n- `name=&lt;name&gt;` a container's name\n- `network`=(`&lt;network id&gt;` or `&lt;network name&gt;`)\n- `publish`=(`&lt;port&gt;[/&lt;proto&gt;]`|`&lt;startport-endport&gt;/[&lt;proto&gt;]`)\n- `since`=(`&lt;container id&gt;` or `&lt;container name&gt;`)\n- `status=`(`created`|`restarting`|`running`|`removing`|`paused`|`exited`|`dead`)\n- `volume`=(`&lt;volume name&gt;` or `&lt;mount point destination&gt;`)\n",
             "type": "string"
           }
         ],
@@ -7633,7 +7633,7 @@
           {
             "name": "detachKeys",
             "in": "query",
-            "description": "Override the key sequence for detaching a container. Format is a\nsingle character `[a-Z]` or `ctrl-<value>` where `<value>` is one\nof: `a-z`, `@`, `^`, `[`, `,` or `_`.\n",
+            "description": "Override the key sequence for detaching a container. Format is a\nsingle character `[a-Z]` or `ctrl-&lt;value&gt;` where `&lt;value&gt;` is one\nof: `a-z`, `@`, `^`, `[`, `,` or `_`.\n",
             "type": "string"
           }
         ],
@@ -8091,7 +8091,7 @@
           {
             "name": "detachKeys",
             "in": "query",
-            "description": "Override the key sequence for detaching a container.Format is a single\ncharacter `[a-Z]` or `ctrl-<value>` where `<value>` is one of: `a-z`,\n`@`, `^`, `[`, `,` or `_`.\n",
+            "description": "Override the key sequence for detaching a container.Format is a single\ncharacter `[a-Z]` or `ctrl-&lt;value&gt;` where `&lt;value&gt;` is one of: `a-z`,\n`@`, `^`, `[`, `,` or `_`.\n",
             "type": "string"
           },
           {
@@ -8181,7 +8181,7 @@
           {
             "name": "detachKeys",
             "in": "query",
-            "description": "Override the key sequence for detaching a container.Format is a single\ncharacter `[a-Z]` or `ctrl-<value>` where `<value>` is one of: `a-z`,\n`@`, `^`, `[`, `,`, or `_`.\n",
+            "description": "Override the key sequence for detaching a container.Format is a single\ncharacter `[a-Z]` or `ctrl-&lt;value&gt;` where `&lt;value&gt;` is one of: `a-z`,\n`@`, `^`, `[`, `,`, or `_`.\n",
             "type": "string"
           },
           {
@@ -8583,7 +8583,7 @@
           {
             "name": "filters",
             "in": "query",
-            "description": "Filters to process on the prune list, encoded as JSON (a `map[string][]string`).\n\nAvailable filters:\n- `until=<timestamp>` Prune containers created before this timestamp. The `<timestamp>` can be Unix timestamps, date formatted timestamps, or Go duration strings (e.g. `10m`, `1h30m`) computed relative to the daemon machine’s time.\n- `label` (`label=<key>`, `label=<key>=<value>`, `label!=<key>`, or `label!=<key>=<value>`) Prune containers with (or without, in case `label!=...` is used) the specified labels.\n",
+            "description": "Filters to process on the prune list, encoded as JSON (a `map[string][]string`).\n\nAvailable filters:\n- `until=&lt;timestamp&gt;` Prune containers created before this timestamp. The `&lt;timestamp&gt;` can be Unix timestamps, date formatted timestamps, or Go duration strings (e.g. `10m`, `1h30m`) computed relative to the daemon machine’s time.\n- `label` (`label=&lt;key&gt;`, `label=&lt;key&gt;=&lt;value&gt;`, `label!=&lt;key&gt;`, or `label!=&lt;key&gt;=&lt;value&gt;`) Prune containers with (or without, in case `label!=...` is used) the specified labels.\n",
             "type": "string"
           }
         ],
@@ -8657,7 +8657,7 @@
           {
             "name": "filters",
             "in": "query",
-            "description": "A JSON encoded value of the filters (a `map[string][]string`) to\nprocess on the images list.\n\nAvailable filters:\n\n- `before`=(`<image-name>[:<tag>]`,  `<image id>` or `<image@digest>`)\n- `dangling=true`\n- `label=key` or `label=\"key=value\"` of an image label\n- `reference`=(`<image-name>[:<tag>]`)\n- `since`=(`<image-name>[:<tag>]`,  `<image id>` or `<image@digest>`)\n",
+            "description": "A JSON encoded value of the filters (a `map[string][]string`) to\nprocess on the images list.\n\nAvailable filters:\n\n- `before`=(`&lt;image-name&gt;[:&lt;tag&gt;]`,  `&lt;image id&gt;` or `&lt;image@digest&gt;`)\n- `dangling=true`\n- `label=key` or `label=\"key=value\"` of an image label\n- `reference`=(`&lt;image-name&gt;[:&lt;tag&gt;]`)\n- `since`=(`&lt;image-name&gt;[:&lt;tag&gt;]`,  `&lt;image id&gt;` or `&lt;image@digest&gt;`)\n",
             "type": "string"
           },
           {
@@ -8829,7 +8829,7 @@
           {
             "name": "networkmode",
             "in": "query",
-            "description": "Sets the networking mode for the run commands during build. Supported\nstandard values are: `bridge`, `host`, `none`, and `container:<name|id>`.\nAny other value is taken as a custom network's name or ID to which this\ncontainer should connect to.\n",
+            "description": "Sets the networking mode for the run commands during build. Supported\nstandard values are: `bridge`, `host`, `none`, and `container:&lt;name|id&gt;`.\nAny other value is taken as a custom network's name or ID to which this\ncontainer should connect to.\n",
             "type": "string"
           },
           {
@@ -8916,7 +8916,7 @@
             "name": "filters",
             "in": "query",
             "type": "string",
-            "description": "A JSON encoded value of the filters (a `map[string][]string`) to\nprocess on the list of build cache objects.\n\nAvailable filters:\n\n- `until=<duration>`: duration relative to daemon's time, during which build cache was not used, in Go's duration format (e.g., '24h')\n- `id=<id>`\n- `parent=<id>`\n- `type=<string>`\n- `description=<string>`\n- `inuse`\n- `shared`\n- `private`\n"
+            "description": "A JSON encoded value of the filters (a `map[string][]string`) to\nprocess on the list of build cache objects.\n\nAvailable filters:\n\n- `until=&lt;duration&gt;`: duration relative to daemon's time, during which build cache was not used, in Go's duration format (e.g., '24h')\n- `id=&lt;id&gt;`\n- `parent=&lt;id&gt;`\n- `type=&lt;string&gt;`\n- `description=&lt;string&gt;`\n- `inuse`\n- `shared`\n- `private`\n"
           }
         ],
         "responses": {
@@ -9171,7 +9171,7 @@
                 {
                   "Id": "6cfa4d1f33fb861d4d114f43b25abd0ac737509268065cdfd69d544a59c85ab8",
                   "Created": 1398108222,
-                  "CreatedBy": "/bin/sh -c #(nop) MAINTAINER Tianon Gravi <admwiggin@gmail.com> - mkimage-debootstrap.sh -i iproute,iputils-ping,ubuntu-minimal -t lucid.tar.xz lucid http://archive.ubuntu.com/ubuntu/",
+                  "CreatedBy": "/bin/sh -c #(nop) MAINTAINER Tianon Gravi &lt;admwiggin@gmail.com&gt; - mkimage-debootstrap.sh -i iproute,iputils-ping,ubuntu-minimal -t lucid.tar.xz lucid http://archive.ubuntu.com/ubuntu/",
                   "Tags": [],
                   "Size": 0,
                   "Comment": ""
@@ -9492,7 +9492,7 @@
           {
             "name": "filters",
             "in": "query",
-            "description": "A JSON encoded value of the filters (a `map[string][]string`) to process on the images list. Available filters:\n\n- `is-automated=(true|false)`\n- `is-official=(true|false)`\n- `stars=<number>` Matches images that has at least 'number' stars.\n",
+            "description": "A JSON encoded value of the filters (a `map[string][]string`) to process on the images list. Available filters:\n\n- `is-automated=(true|false)`\n- `is-official=(true|false)`\n- `stars=&lt;number&gt;` Matches images that has at least 'number' stars.\n",
             "type": "string"
           }
         ],
@@ -9512,7 +9512,7 @@
           {
             "name": "filters",
             "in": "query",
-            "description": "Filters to process on the prune list, encoded as JSON (a `map[string][]string`). Available filters:\n\n- `dangling=<boolean>` When set to `true` (or `1`), prune only\n   unused *and* untagged images. When set to `false`\n   (or `0`), all unused images are pruned.\n- `until=<string>` Prune images created before this timestamp. The `<timestamp>` can be Unix timestamps, date formatted timestamps, or Go duration strings (e.g. `10m`, `1h30m`) computed relative to the daemon machine’s time.\n- `label` (`label=<key>`, `label=<key>=<value>`, `label!=<key>`, or `label!=<key>=<value>`) Prune images with (or without, in case `label!=...` is used) the specified labels.\n",
+            "description": "Filters to process on the prune list, encoded as JSON (a `map[string][]string`). Available filters:\n\n- `dangling=&lt;boolean&gt;` When set to `true` (or `1`), prune only\n   unused *and* untagged images. When set to `false`\n   (or `0`), all unused images are pruned.\n- `until=&lt;string&gt;` Prune images created before this timestamp. The `&lt;timestamp&gt;` can be Unix timestamps, date formatted timestamps, or Go duration strings (e.g. `10m`, `1h30m`) computed relative to the daemon machine’s time.\n- `label` (`label=&lt;key&gt;`, `label=&lt;key&gt;=&lt;value&gt;`, `label!=&lt;key&gt;`, or `label!=&lt;key&gt;=&lt;value&gt;`) Prune images with (or without, in case `label!=...` is used) the specified labels.\n",
             "type": "string"
           }
         ],
@@ -9880,7 +9880,7 @@
           {
             "name": "author",
             "in": "query",
-            "description": "Author of the image (e.g., `John Hannibal Smith <hannibal@a-team.com>`)",
+            "description": "Author of the image (e.g., `John Hannibal Smith &lt;hannibal@a-team.com&gt;`)",
             "type": "string"
           },
           {
@@ -9946,7 +9946,7 @@
           {
             "name": "filters",
             "in": "query",
-            "description": "A JSON encoded value of filters (a `map[string][]string`) to process on the event list. Available filters:\n\n- `config=<string>` config name or ID\n- `container=<string>` container name or ID\n- `daemon=<string>` daemon name or ID\n- `event=<string>` event type\n- `image=<string>` image name or ID\n- `label=<string>` image or container label\n- `network=<string>` network name or ID\n- `node=<string>` node ID\n- `plugin`=<string> plugin name or ID\n- `scope`=<string> local or swarm\n- `secret=<string>` secret name or ID\n- `service=<string>` service name or ID\n- `type=<string>` object to filter by, one of `container`, `image`, `volume`, `network`, `daemon`, `plugin`, `node`, `service`, `secret` or `config`\n- `volume=<string>` volume name\n",
+            "description": "A JSON encoded value of filters (a `map[string][]string`) to process on the event list. Available filters:\n\n- `config=&lt;string&gt;` config name or ID\n- `container=&lt;string&gt;` container name or ID\n- `daemon=&lt;string&gt;` daemon name or ID\n- `event=&lt;string&gt;` event type\n- `image=&lt;string&gt;` image name or ID\n- `label=&lt;string&gt;` image or container label\n- `network=&lt;string&gt;` network name or ID\n- `node=&lt;string&gt;` node ID\n- `plugin`=&lt;string&gt; plugin name or ID\n- `scope`=&lt;string&gt; local or swarm\n- `secret=&lt;string&gt;` secret name or ID\n- `service=&lt;string&gt;` service name or ID\n- `type=&lt;string&gt;` object to filter by, one of `container`, `image`, `volume`, `network`, `daemon`, `plugin`, `node`, `service`, `secret` or `config`\n- `volume=&lt;string&gt;` volume name\n",
             "type": "string"
           }
         ],
@@ -10087,7 +10087,7 @@
                       "ndlpt0hhvkqcdfkputsk4cq9c"
                     ],
                     "Type": "regular",
-                    "Description": "mount / from exec /bin/sh -c echo 'Binary::apt::APT::Keep-Downloaded-Packages \"true\";' > /etc/apt/apt.conf.d/keep-cache",
+                    "Description": "mount / from exec /bin/sh -c echo 'Binary::apt::APT::Keep-Downloaded-Packages \"true\";' &gt; /etc/apt/apt.conf.d/keep-cache",
                     "InUse": false,
                     "Shared": true,
                     "Size": 51,
@@ -10326,7 +10326,7 @@
                 },
                 "DetachKeys": {
                   "type": "string",
-                  "description": "Override the key sequence for detaching a container. Format is\na single character `[a-Z]` or `ctrl-<value>` where `<value>`\nis one of: `a-z`, `@`, `^`, `[`, `,` or `_`.\n"
+                  "description": "Override the key sequence for detaching a container. Format is\na single character `[a-Z]` or `ctrl-&lt;value&gt;` where `&lt;value&gt;`\nis one of: `a-z`, `@`, `^`, `[`, `,` or `_`.\n"
                 },
                 "Tty": {
                   "type": "boolean",
@@ -10652,7 +10652,7 @@
           {
             "name": "filters",
             "in": "query",
-            "description": "JSON encoded value of the filters (a `map[string][]string`) to\nprocess on the volumes list. Available filters:\n\n- `dangling=<boolean>` When set to `true` (or `1`), returns all\n   volumes that are not in use by a container. When set to `false`\n   (or `0`), only volumes that are in use by one or more\n   containers are returned.\n- `driver=<volume-driver-name>` Matches volumes based on their driver.\n- `label=<key>` or `label=<key>:<value>` Matches volumes based on\n   the presence of a `label` alone or a `label` and a value.\n- `name=<volume-name>` Matches all or part of a volume name.\n",
+            "description": "JSON encoded value of the filters (a `map[string][]string`) to\nprocess on the volumes list. Available filters:\n\n- `dangling=&lt;boolean&gt;` When set to `true` (or `1`), returns all\n   volumes that are not in use by a container. When set to `false`\n   (or `0`), only volumes that are in use by one or more\n   containers are returned.\n- `driver=&lt;volume-driver-name&gt;` Matches volumes based on their driver.\n- `label=&lt;key&gt;` or `label=&lt;key&gt;:&lt;value&gt;` Matches volumes based on\n   the presence of a `label` alone or a `label` and a value.\n- `name=&lt;volume-name&gt;` Matches all or part of a volume name.\n",
             "type": "string",
             "format": "json"
           }
@@ -10874,7 +10874,7 @@
           {
             "name": "filters",
             "in": "query",
-            "description": "Filters to process on the prune list, encoded as JSON (a `map[string][]string`).\n\nAvailable filters:\n- `label` (`label=<key>`, `label=<key>=<value>`, `label!=<key>`, or `label!=<key>=<value>`) Prune volumes with (or without, in case `label!=...` is used) the specified labels.\n- `all` (`all=true`) - Consider all (local) volumes for pruning and not just anonymous volumes.\n",
+            "description": "Filters to process on the prune list, encoded as JSON (a `map[string][]string`).\n\nAvailable filters:\n- `label` (`label=&lt;key&gt;`, `label=&lt;key&gt;=&lt;value&gt;`, `label!=&lt;key&gt;`, or `label!=&lt;key&gt;=&lt;value&gt;`) Prune volumes with (or without, in case `label!=...` is used) the specified labels.\n- `all` (`all=true`) - Consider all (local) volumes for pruning and not just anonymous volumes.\n",
             "type": "string"
           }
         ],
@@ -11006,7 +11006,7 @@
           {
             "name": "filters",
             "in": "query",
-            "description": "JSON encoded value of the filters (a `map[string][]string`) to process\non the networks list.\n\nAvailable filters:\n\n- `dangling=<boolean>` When set to `true` (or `1`), returns all\n   networks that are not in use by a container. When set to `false`\n   (or `0`), only networks that are in use by one or more\n   containers are returned.\n- `driver=<driver-name>` Matches a network's driver.\n- `id=<network-id>` Matches all or part of a network ID.\n- `label=<key>` or `label=<key>=<value>` of a network label.\n- `name=<network-name>` Matches all or part of a network name.\n- `scope=[\"swarm\"|\"global\"|\"local\"]` Filters networks by scope (`swarm`, `global`, or `local`).\n- `type=[\"custom\"|\"builtin\"]` Filters networks by type. The `custom` keyword returns all user-defined networks.\n",
+            "description": "JSON encoded value of the filters (a `map[string][]string`) to process\non the networks list.\n\nAvailable filters:\n\n- `dangling=&lt;boolean&gt;` When set to `true` (or `1`), returns all\n   networks that are not in use by a container. When set to `false`\n   (or `0`), only networks that are in use by one or more\n   containers are returned.\n- `driver=&lt;driver-name&gt;` Matches a network's driver.\n- `id=&lt;network-id&gt;` Matches all or part of a network ID.\n- `label=&lt;key&gt;` or `label=&lt;key&gt;=&lt;value&gt;` of a network label.\n- `name=&lt;network-name&gt;` Matches all or part of a network name.\n- `scope=[\"swarm\"|\"global\"|\"local\"]` Filters networks by scope (`swarm`, `global`, or `local`).\n- `type=[\"custom\"|\"builtin\"]` Filters networks by type. The `custom` keyword returns all user-defined networks.\n",
             "type": "string"
           }
         ],
@@ -11410,7 +11410,7 @@
           {
             "name": "filters",
             "in": "query",
-            "description": "Filters to process on the prune list, encoded as JSON (a `map[string][]string`).\n\nAvailable filters:\n- `until=<timestamp>` Prune networks created before this timestamp. The `<timestamp>` can be Unix timestamps, date formatted timestamps, or Go duration strings (e.g. `10m`, `1h30m`) computed relative to the daemon machine’s time.\n- `label` (`label=<key>`, `label=<key>=<value>`, `label!=<key>`, or `label!=<key>=<value>`) Prune networks with (or without, in case `label!=...` is used) the specified labels.\n",
+            "description": "Filters to process on the prune list, encoded as JSON (a `map[string][]string`).\n\nAvailable filters:\n- `until=&lt;timestamp&gt;` Prune networks created before this timestamp. The `&lt;timestamp&gt;` can be Unix timestamps, date formatted timestamps, or Go duration strings (e.g. `10m`, `1h30m`) computed relative to the daemon machine’s time.\n- `label` (`label=&lt;key&gt;`, `label=&lt;key&gt;=&lt;value&gt;`, `label!=&lt;key&gt;`, or `label!=&lt;key&gt;=&lt;value&gt;`) Prune networks with (or without, in case `label!=...` is used) the specified labels.\n",
             "type": "string"
           }
         ],
@@ -11473,7 +11473,7 @@
             "name": "filters",
             "in": "query",
             "type": "string",
-            "description": "A JSON encoded value of the filters (a `map[string][]string`) to\nprocess on the plugin list.\n\nAvailable filters:\n\n- `capability=<capability name>`\n- `enable=<true>|<false>`\n"
+            "description": "A JSON encoded value of the filters (a `map[string][]string`) to\nprocess on the plugin list.\n\nAvailable filters:\n\n- `capability=&lt;capability name&gt;`\n- `enable=&lt;true&gt;|&lt;false&gt;`\n"
           }
         ],
         "tags": [
@@ -12018,7 +12018,7 @@
           {
             "name": "filters",
             "in": "query",
-            "description": "Filters to process on the nodes list, encoded as JSON (a `map[string][]string`).\n\nAvailable filters:\n- `id=<node id>`\n- `label=<engine label>`\n- `membership=`(`accepted`|`pending`)`\n- `name=<node name>`\n- `node.label=<node label>`\n- `role=`(`manager`|`worker`)`\n",
+            "description": "Filters to process on the nodes list, encoded as JSON (a `map[string][]string`).\n\nAvailable filters:\n- `id=&lt;node id&gt;`\n- `label=&lt;engine label&gt;`\n- `membership=`(`accepted`|`pending`)`\n- `name=&lt;node name&gt;`\n- `node.label=&lt;node label&gt;`\n- `role=`(`manager`|`worker`)`\n",
             "type": "string"
           }
         ],
@@ -12268,7 +12268,7 @@
                   "type": "string"
                 },
                 "DataPathAddr": {
-                  "description": "Address or interface to use for data path traffic (format:\n`<ip|interface>`), for example,  `192.168.1.1`, or an interface,\nlike `eth0`. If `DataPathAddr` is unspecified, the same address\nas `AdvertiseAddr` is used.\n\nThe `DataPathAddr` specifies the address that global scope\nnetwork drivers will publish towards other  nodes in order to\nreach the containers running on this node. Using this parameter\nit is possible to separate the container data traffic from the\nmanagement traffic of the cluster.\n",
+                  "description": "Address or interface to use for data path traffic (format:\n`&lt;ip|interface&gt;`), for example,  `192.168.1.1`, or an interface,\nlike `eth0`. If `DataPathAddr` is unspecified, the same address\nas `AdvertiseAddr` is used.\n\nThe `DataPathAddr` specifies the address that global scope\nnetwork drivers will publish towards other  nodes in order to\nreach the containers running on this node. Using this parameter\nit is possible to separate the container data traffic from the\nmanagement traffic of the cluster.\n",
                   "type": "string"
                 },
                 "DataPathPort": {
@@ -12373,7 +12373,7 @@
                   "type": "string"
                 },
                 "DataPathAddr": {
-                  "description": "Address or interface to use for data path traffic (format:\n`<ip|interface>`), for example,  `192.168.1.1`, or an interface,\nlike `eth0`. If `DataPathAddr` is unspecified, the same address\nas `AdvertiseAddr` is used.\n\nThe `DataPathAddr` specifies the address that global scope\nnetwork drivers will publish towards other nodes in order to\nreach the containers running on this node. Using this parameter\nit is possible to separate the container data traffic from the\nmanagement traffic of the cluster.\n",
+                  "description": "Address or interface to use for data path traffic (format:\n`&lt;ip|interface&gt;`), for example,  `192.168.1.1`, or an interface,\nlike `eth0`. If `DataPathAddr` is unspecified, the same address\nas `AdvertiseAddr` is used.\n\nThe `DataPathAddr` specifies the address that global scope\nnetwork drivers will publish towards other nodes in order to\nreach the containers running on this node. Using this parameter\nit is possible to separate the container data traffic from the\nmanagement traffic of the cluster.\n",
                   "type": "string"
                 },
                 "RemoteAddrs": {
@@ -12636,7 +12636,7 @@
             "name": "filters",
             "in": "query",
             "type": "string",
-            "description": "A JSON encoded value of the filters (a `map[string][]string`) to\nprocess on the services list.\n\nAvailable filters:\n\n- `id=<service id>`\n- `label=<service label>`\n- `mode=[\"replicated\"|\"global\"]`\n- `name=<service name>`\n"
+            "description": "A JSON encoded value of the filters (a `map[string][]string`) to\nprocess on the services list.\n\nAvailable filters:\n\n- `id=&lt;service id&gt;`\n- `label=&lt;service label&gt;`\n- `mode=[\"replicated\"|\"global\"]`\n- `name=&lt;service name&gt;`\n"
           },
           {
             "name": "status",
@@ -13382,7 +13382,7 @@
             "name": "filters",
             "in": "query",
             "type": "string",
-            "description": "A JSON encoded value of the filters (a `map[string][]string`) to\nprocess on the tasks list.\n\nAvailable filters:\n\n- `desired-state=(running | shutdown | accepted)`\n- `id=<task id>`\n- `label=key` or `label=\"key=value\"`\n- `name=<task name>`\n- `node=<node id or name>`\n- `service=<service name>`\n"
+            "description": "A JSON encoded value of the filters (a `map[string][]string`) to\nprocess on the tasks list.\n\nAvailable filters:\n\n- `desired-state=(running | shutdown | accepted)`\n- `id=&lt;task id&gt;`\n- `label=key` or `label=\"key=value\"`\n- `name=&lt;task name&gt;`\n- `node=&lt;node id or name&gt;`\n- `service=&lt;service name&gt;`\n"
           }
         ],
         "tags": [
@@ -13613,7 +13613,7 @@
             "name": "filters",
             "in": "query",
             "type": "string",
-            "description": "A JSON encoded value of the filters (a `map[string][]string`) to\nprocess on the secrets list.\n\nAvailable filters:\n\n- `id=<secret id>`\n- `label=<key> or label=<key>=value`\n- `name=<secret name>`\n- `names=<secret name>`\n"
+            "description": "A JSON encoded value of the filters (a `map[string][]string`) to\nprocess on the secrets list.\n\nAvailable filters:\n\n- `id=&lt;secret id&gt;`\n- `label=&lt;key&gt; or label=&lt;key&gt;=value`\n- `name=&lt;secret name&gt;`\n- `names=&lt;secret name&gt;`\n"
           }
         ],
         "tags": [
@@ -13915,7 +13915,7 @@
             "name": "filters",
             "in": "query",
             "type": "string",
-            "description": "A JSON encoded value of the filters (a `map[string][]string`) to\nprocess on the configs list.\n\nAvailable filters:\n\n- `id=<config id>`\n- `label=<key> or label=<key>=value`\n- `name=<config name>`\n- `names=<config name>`\n"
+            "description": "A JSON encoded value of the filters (a `map[string][]string`) to\nprocess on the configs list.\n\nAvailable filters:\n\n- `id=&lt;config id&gt;`\n- `label=&lt;key&gt; or label=&lt;key&gt;=value`\n- `name=&lt;config name&gt;`\n- `names=&lt;config name&gt;`\n"
           }
         ],
         "tags": [
