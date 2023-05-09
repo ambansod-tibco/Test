@@ -1,0 +1,6 @@
+openapi: "3.0.3"
+info:
+  title: "Test1"
+  description: ""
+  version: "11"
+paths: {}
