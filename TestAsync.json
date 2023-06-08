@@ -1,0 +1,13 @@
+{
+  "asyncapi": "2.3.0",
+  "info": {
+    "title": "TestAsync",
+    "version": "4",
+    "description": ""
+  },
+  "servers": {},
+  "channels": {},
+  "components": {
+    "schemas": {}
+  }
+}

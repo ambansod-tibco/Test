@@ -387,13 +387,21 @@
   },
   "components": {
     "schemas": {
-      "authError": {
+      "game": {
         "type": "object",
         "description": "",
         "properties": {
-          "message": {
+          "title": {
             "type": "string",
-            "default": "You do not have accesss!"
+            "default": "Red dead redemption"
+          },
+          "rating": {
+            "type": "number",
+            "default": 9.4
+          },
+          "production": {
+            "type": "string",
+            "default": "Rockstar Games"
           }
         }
       },
@@ -412,21 +420,13 @@
           }
         ]
       },
-      "game": {
+      "authError": {
         "type": "object",
         "description": "",
         "properties": {
-          "title": {
+          "message": {
             "type": "string",
-            "default": "Red dead redemption"
-          },
-          "rating": {
-            "type": "number",
-            "default": 9.4
-          },
-          "production": {
-            "type": "string",
-            "default": "Rockstar Games"
+            "default": "You do not have accesss!"
           }
         }
       }
