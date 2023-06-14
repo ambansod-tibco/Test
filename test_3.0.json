@@ -1,9 +1,9 @@
 {
   "openapi": "3.0.3",
   "info": {
-    "title": "test_3.0",
+    "title": "test3.0",
     "description": "desc",
-    "version": "1.2.3"
+    "version": "123"
   },
   "paths": {
     "/test3": {
@@ -146,7 +146,7 @@
   },
   "components": {
     "schemas": {
-      "test3": {
+      "testschema": {
         "type": "object",
         "description": ""
       }
