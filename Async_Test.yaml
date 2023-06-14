@@ -1,0 +1,26 @@
+asyncapi: "2.3.0"
+info:
+  title: "Async_Test"
+  version: "1.2.3"
+  description: "desc"
+servers: {}
+channels:
+  test:
+    description: "desc"
+    subscribe:
+      summary: ""
+      operationId: "1"
+      description: "desc"
+  test2:
+    description: "desc"
+    publish:
+      summary: ""
+      operationId: "2"
+      description: "desc"
+components:
+  schemas:
+    asyncSchema:
+      type: "object"
+      description: ""
+      x-parser-schema-id: "asyncSchema"
+x-parser-spec-parsed: true
