@@ -1,14 +1,10 @@
 asyncapi: "2.3.0"
 info:
-  title: "TestAsync"
-  version: "1"
+  title: "Test_Async"
+  version: "123"
   description: "desc"
 servers: {}
-channels:
-  test:
-    description: "desc"
-    subscribe:
-      summary: ""
+channels: {}
 components:
   schemas: {}
 x-parser-spec-parsed: true
