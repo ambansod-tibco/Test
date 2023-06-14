@@ -1,8 +1,8 @@
 swagger: "2.0"
 info:
-  title: "Test2.0"
+  title: "Test2"
   description: "desc"
-  version: "2.0"
+  version: "2"
 paths:
   /test2:
     get:
@@ -21,25 +21,6 @@ paths:
             application/json:
               msg: "success"
       produces:
-        - "application/json"
-    put:
-      summary: ""
-      description: ""
-      parameters: []
-      responses:
-        200:
-          description: "success response"
-          schema:
-            type: "object"
-            properties:
-              msg:
-                type: "string"
-          examples:
-            application/json:
-              msg: "success"
-      produces:
-        - "application/json"
-      consumes:
         - "application/json"
     post:
       summary: ""
@@ -60,7 +41,7 @@ paths:
         - "application/json"
       consumes:
         - "application/json"
-    patch:
+    put:
       summary: ""
       description: ""
       parameters: []
@@ -96,7 +77,22 @@ paths:
               msg: "success"
       produces:
         - "application/json"
-definitions:
-  test2schema:
-    type: "object"
-    description: ""
+    patch:
+      summary: ""
+      description: ""
+      parameters: []
+      responses:
+        200:
+          description: "success response"
+          schema:
+            type: "object"
+            properties:
+              msg:
+                type: "string"
+          examples:
+            application/json:
+              msg: "success"
+      produces:
+        - "application/json"
+      consumes:
+        - "application/json"

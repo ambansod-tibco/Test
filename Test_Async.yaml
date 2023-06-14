@@ -1,7 +1,7 @@
 asyncapi: "2.3.0"
 info:
   title: "Test_Async"
-  version: "123"
+  version: "3"
   description: "desc"
 servers: {}
 channels: {}
