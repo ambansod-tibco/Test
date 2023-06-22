@@ -1,9 +1,9 @@
 {
-  "openapi": "3.0.3",
+  "openapi": "",
   "info": {
     "title": "123",
     "description": "desc123",
-    "version": "xyz1"
+    "version": "1"
   },
   "tags": [],
   "paths": {
