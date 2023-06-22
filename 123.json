@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "123",
-    "description": "",
+    "description": "desc123",
     "version": "1"
   },
   "tags": [],
